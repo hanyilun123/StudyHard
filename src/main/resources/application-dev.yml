@@ -1,0 +1,29 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    primary:
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      jdbc-url: jdbc:mysql://localhost:3306/media?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    secondary:
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      jdbc-url: jdbc:mysql://localhost:3306/config?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+
+
+#mybatis:
+  #mapper-locations: classpath:com.study.hard.mapper/*.xml
+
+logging:
+  level:
+    com.study.hard.mapper: debug
+    #Spring Boot 2.1.0 之后的版本使用以上配置，则无法打印出来RequestMapping信息,需要将日志配置为TRACE等级
+    web: TRACE
